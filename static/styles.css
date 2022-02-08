@@ -1,0 +1,230 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    font-weight: bold;
+    color: #283618;
+}
+
+.nav-link
+{
+    color: #bc6c25;
+    font-family: 'Raleway', sans-serif;
+}
+.nav-link:hover
+{
+    color: #dda15e;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: underline;
+}
+
+.bg-light
+{
+    background-color: transparent!important;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+#capitalize
+{
+    text-transform: capitalize;
+}
+
+.roundbutton
+{
+    background: linear-gradient(to right, #606c38, #283618);
+    border: none;
+    color: white;
+    padding: 5px 30px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.roundbutton:hover
+{
+    background: linear-gradient(to right, #283618, #606c38);
+}
+
+
+body
+{
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    width: 70%;
+    margin: 0 auto;
+    background: linear-gradient(-45deg, #eee2dc, #fefae0);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+head
+{
+    font-size: 15px;
+    color: white;
+}
+
+h1
+{
+    font-weight: bold;
+    text-align: center;
+    color: #283618;
+}
+
+h2
+{
+    font-weight: bold;
+    color: #606c38;
+}
+
+h3
+{
+    font-weight: bold;
+    color: #bc6c25;
+}
+
+h4
+{
+    font-weight: bold;
+    color: #dda15e;
+}
+
+p
+{
+    color: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+.normal {
+  font-style: normal;
+}
+.italic {
+  font-style: italic;
+}
+.oblique {
+  font-style: oblique;
+}
+.thick {
+  font-weight: bold;
+}
+
+.roundform
+{
+    background-color: #ffffff80;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.rounddropdown
+{
+    background-color: #ffffff80;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #dda15e;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.rcorners1
+{
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff80;
+  padding: 20px;
+}
+
+.blockquote
+{
+    margin: 20px;
+}
+
+.form-control
+{
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffffff80;
+    border: none;
+    color: #e27d60;
+    text-align: center;
+    text-decoration: none;
+}
+
+.table
+{
+    border-radius: 20px;
+  background-color: #ffffff80;
+  padding: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.whitewriting
+{
+    color: white;
+}
+
+.orangewriting
+{
+    color: #bc6c25;
+}
+
+.bgcards
+{
+    background-color: #ffffff80;
+    border: none;
+    color: #e27d60;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-decoration: none;
+}
+

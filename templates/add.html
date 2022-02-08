@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cards
+{% endblock %}
+
+{% block navbar %}
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/add">add cards<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/quiz">quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">logout</a>
+                    </li>
+                </ul>
+            </div>
+{% endblock %}
+
+{% block main %}
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end mt-5 mb-3">
+                <h2>add a new flashcard</h2>
+                <form action="/add" method="post">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1"><h4>language</h4></label>
+                        <select class="form-control rounddropdown orangewriting" id="lang_in_db" name="lang_in_db">
+                        {% for language in overview_languages %}
+                          <option>{{ language["language"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input autocomplete="off" autofocus class="form-control roundform" name="word" placeholder="word" type="text">
+                    </div>
+                    <div class="form-group">
+                        <input autocomplete="off" autofocus class="form-control roundform" name="definition" placeholder="definition" type="text">
+                    </div>
+                    <button class="roundbutton" type="submit">Add Card</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<hr class="divider my-4 mt-5 mb-5" />
+<section class="page-section" id="select_newlang">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+            {% if message is defined %}
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr>
+                          <th scope="col">{{ message }}</th>
+                        </tr>
+                    </thead>
+                </table>
+            {% else %}
+            <h2 class="mb-5">your flashcards</h2>
+            <div class="row">
+                {% for card in db_user %}
+              <div class="col-sm-6">
+                    <div class="card text-white bgcards mb-3 transpcard" style="max-width: 18rem;">
+                      <div class="card-header orangewriting">{{ card["language"] }}</div>
+                      <div class="card-body">
+                        <h5 class="card-title orangewriting">{{ card["word"] }}</h5>
+                        <p class="card-text orangewriting">{{ card["definition"] }}</p>
+                      </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

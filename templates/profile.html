@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block navbar %}
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">profile<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/add">add cards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/quiz">quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">logout</a>
+                    </li>
+                </ul>
+            </div>
+{% endblock %}
+
+
+{% block main %}
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end mt-5 mb-3">
+            <h4>welcome back!</h4>
+            <h2 class="mb-5">ready to learn?</h2>
+            {% if message is defined %}
+            <p>{{ message }}</p>
+            {% else %}
+            <h2 class="mb-4">at the moment you're working on</h2>
+            <table class="table table-borderless table-hover rcorners1 orangewriting">
+            <thead>
+            <tr>
+              <th scope="col">language</th>
+              <th scope="col">flashcards</th>
+              <th scope="col">quiz taken</th>
+              <th scope="col">average</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for language in overview_languages %}
+            <tr>
+                <td scope="row">{{ language["language"] }}</td>
+                <td>{{ language["flashcards"] }}</td>
+                <td>{{ language["quiz"] }}</td>
+                <td>{{ language["average"] }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+<hr class="divider my-4 mt-5 mb-5" />
+<section class="page-section" id="select_newlang">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+            <h2>do you want to start with a new language?</h2>
+
+            <form action="/" method="post">
+                <div class="form-group mt-5">
+                    <label for="exampleFormControlSelect1" class="whitewriting"><h4>Which one?</h4></label>
+                    <select class="form-control rounddropdown orangewriting" id="new_language" name="new_language">
+                      <option>Italian</option>
+                      <option>Spanish</option>
+                      <option>French</option>
+                      <option>German</option>
+                      <option>Portuguese</option>
+                    </select>
+                </div>
+                <button class="roundbutton mt-4" type="submit">Start now!</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
