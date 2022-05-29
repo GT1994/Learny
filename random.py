@@ -1,5 +1,5 @@
 # iexcloud
-# export API_KEY=pk_34f849efbf6644aba48eefa67beb7b67
+# export API_KEY=APIKEYHERE
 
 # quiztab block main
 {% block main %}
